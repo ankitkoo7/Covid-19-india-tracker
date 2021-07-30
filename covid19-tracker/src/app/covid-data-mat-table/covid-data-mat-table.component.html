@@ -1,0 +1,73 @@
+
+        <div class="panel fix">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col col-sm-3 col-xs-12">
+                        <h4 class="title">Statewise Data <span>List</span></h4>
+                    </div>
+                    <div class="col-sm-9 col-xs-12 text-center" >
+                        <div class="btn_group " >
+                            <mat-form-field >
+                                
+<input type="text" matInput (keyup)="applyFilter($event.target.value)" style="color: seashell;" placeholder="Search State/UT">
+                                
+                            </mat-form-field>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body table-responsive " #TABLE #table id="htmlData">
+               
+<div class="mat-elevation-z8" >
+                <table mat-table [dataSource]="dataSource" matSort class="table" >
+
+                    <ng-container matColumnDef="state">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header> State/UT </th>
+                      <td mat-cell *matCellDef="let element" class="tdbr"> {{element.state}} </td>
+                    </ng-container>
+                  
+                   
+                    <ng-container matColumnDef="confirmed">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header> Confirmed </th>
+                      <td mat-cell *matCellDef="let element" class="tdbr"><i class="fa fa-arrow-up fa-xs increased" aria-hidden="true">{{element.deltaconfirmed}}</i><br> {{element.confirmed}} </td>
+                    </ng-container>
+                  
+                 
+                    <ng-container matColumnDef="active">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header> Active </th>
+                      <td mat-cell *matCellDef="let element" class="tdbr"> {{element.active}} </td>
+                    </ng-container>
+                  
+                   
+                    <ng-container matColumnDef="recovered">
+                      <th mat-header-cell *matHeaderCellDef mat-sort-header> Recovered </th>
+                      <td mat-cell *matCellDef="let element" class="tdbr"><i class="fa fa-arrow-up fa-xs increased" aria-hidden="true">{{element.deltarecovered}}</i><br> {{element.recovered}} </td>
+                    </ng-container>
+
+                     
+                     <ng-container matColumnDef="deaths">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Deceased </th>
+                        <td mat-cell *matCellDef="let element" class="tdbr"><i class="fa fa-arrow-up fa-xs increased" aria-hidden="true">{{element.deltadeaths}}</i><br> {{element.deaths}} </td>
+                      </ng-container>
+                      
+
+                    <ng-container matColumnDef="lastupdatedtime">
+                        <th mat-header-cell *matHeaderCellDef mat-sort-header> Last Update </th>
+                        <td mat-cell *matCellDef="let element" class="tdbr"> {{element.lastupdatedtime | date:'dd/MM/yyyy'| date:'medium'}} </td>
+                      </ng-container>
+                  
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                  </table>
+                  <br>
+                  <mat-paginator [pageSizeOptions]="[10,20,33]" showFirstLastButtons style="background: linear-gradient(to right, #2980b9, #2c3e50); color: white;"></mat-paginator>
+                </div><br>
+
+
+                  <button class="btn btn-default bgcustom" title="Pdf" (click)="openPDF()"><i class="fa fa-file-pdf"></i></button> &nbsp; &nbsp;
+                  <button class="btn btn-default bgcustom"  title="Excel" (click)="ExportTOExcel()"><i class="fas fa-file-excel"></i></button>
+            </div>
+           
+        </div>
+   

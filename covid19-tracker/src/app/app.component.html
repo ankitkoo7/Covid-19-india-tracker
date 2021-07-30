@@ -1,0 +1,136 @@
+ 
+
+  <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">India Covid-19 Tracker</a>
+      <div clas="navbar-header">
+      <button class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+            
+          </button></div>
+
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          <li class="nav-item active">
+            <a class="nav-link" href="index.html">Home
+                </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://www.facebook.com/profile.php?id=100004003891398">Feedback</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="bgmain">
+    <div class="container ">
+        
+      <div class="row">
+          <div class="col-md-3 col-xl-3">
+            <div class="cardm bg-c-yellow order-card">
+              <div class="card-block">
+                  <h6 class="m-b-20">Active Cases</h6>
+                  <h2 class="text-right"><i class="fa  f-left"></i><span>{{active | number}}</span></h2>
+                  <p class="m-b-0">Dated<span class="f-right">{{dated | date}}</span></p>
+                  
+              </div>
+          </div>
+          </div>
+          
+          <div class="col-md-3 col-xl-3">
+            <div class="cardm bg-c-blue order-card">
+              <div class="card-block">
+                  <h6 class="m-b-20">Total Cases</h6>
+                  <h2 class="text-left"><i class="fa  f-left"></i><span>{{totalconfirmed | number}}</span></h2>
+                  <p class="m-b-0">Today's New Cases<span class="f-right">+ {{dailyconfirmed | number}}</span></p>
+              </div>
+          </div>
+           
+              
+          </div>
+          
+          <div class="col-md-3 col-xl-3">
+            <div class="cardm bg-c-green order-card">
+              <div class="card-block">
+                  <h6 class="m-b-20">Total Recovered</h6>
+          
+                  <h2 class="text-left"><i class="fa f-left"></i><span>{{totalrecovered | number}}</span></h2>
+                  <p class="m-b-0">Today's Recovered<span class="f-right">+ {{dailyrecovered | number}}</span></p>
+              </div>
+          </div>
+          </div>
+          
+          <div class="col-md-3 col-xl-3">
+              <div class="cardm bg-c-pink order-card">
+                  <div class="card-block">
+                      <h6 class="m-b-20">Total Deaths</h6>
+                      <h2 class="text-right"><i class="fa  f-left"></i><span>{{totaldeceased | number}}</span></h2>
+                      <p class="m-b-0">Today's Deaths<span class="f-right">+ {{dailydeceased | number}}</span></p>
+                  </div>
+              </div>
+          </div>
+    </div>
+     
+    <br>
+  <app-covid-chart></app-covid-chart>
+<br>
+<div class="jumbotron">
+  <div class="row w-100">
+          <div class="col-md-4">
+              <div class="card border-info mx-sm-1 p-3 bg-c-vaccin order-card">
+                
+                  <div class="cardm border-info shadow text-info  my-card " ></div>
+                  <span class="fas fa-syringe text-center" aria-hidden="true"></span>
+                  <div class=" text-center mt-3 "><h4>First Dose of Vaccination</h4></div>
+                  <div class=" text-center mt-2"><h1>{{firstDoseVacci | number}}</h1></div>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="card border-success mx-sm-1 p-3 bg-c-vaccin order-card">
+                  <div class="cardm border-success shadow text-success my-card"></div>
+                  <span class="fas fa-syringe  text-center" aria-hidden="true"><span class="fas fa-syringe"></span></span>
+                  <div class=" text-center mt-3"><h4>Second Dose of Vaccination</h4></div>
+                  <div class=" text-center mt-2"><h1>{{secondDoseVacci | number}}</h1></div>
+              </div>
+          </div>
+          <div class="col-md-4">
+              <div class="card border-danger mx-sm-1 p-3 bg-c-vaccin order-card">
+                  <div class="cardm border-success shadow text-danger  my-card" ></div>
+                  <span class="fas fa-first-aid text-center" aria-hidden="true"></span>
+                  <div class=" text-center mt-3"><h4>Total Vaccination </h4></div>
+                  <div class=" text-center mt-2"><h1>{{totalDoseVacci | number}}</h1></div>
+              </div>
+          </div>
+      
+       </div>
+  </div>
+  <app-covid-data-mat-table></app-covid-data-mat-table>
+
+    </div>
+    <br>
+   
+    <section id="footer">
+		<div class="container">
+			
+			<div class="row">
+				<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
+					<ul class="list-unstyled list-inline social text-center">
+						<li class="list-inline-item"><a href="https://www.facebook.com/profile.php?id=100004003891398"><i class="fab fa-facebook-square"></i></a></li>
+						<li class="list-inline-item"><a href="https://twitter.com/ankitjamesoo7"><i class="fab fa-twitter-square "></i></a></li>
+						<li class="list-inline-item"><a href="https://www.instagram.com/ankitjames10/"><i class="fab fa-instagram"></i></a></li>
+						<li class="list-inline-item"><a href="https://mail.google.com/mail/u/0/?tab=wm#inbox?compose=GTvVlcRzDfhRZGVGLRJdSPLlHkHVzPHLTCHvhXnZzPRJPhcSWLLpWxSKlSXdSxbjjPChbspxfzkTk"><i class="fas fa-envelope-square"></i></a></li>
+						
+					</ul>
+                    <p class="h6">© All Right Reserved 2021.<a class="text-green ml-2" href="https://www.facebook.com/profile.php?id=100004003891398" target="_blank">Ankit Kumar</a></p>
+                    
+                </div>
+				<hr>
+			</div>	
+		</div>
+	</section>
+    </div>
+    
+ 
+ 
+  

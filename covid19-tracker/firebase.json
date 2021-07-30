@@ -1,0 +1,10 @@
+{
+  "hosting": {
+    "public": "dist/covid19-tracker",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ]
+  }
+}
