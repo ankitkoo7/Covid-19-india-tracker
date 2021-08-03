@@ -1,10 +1,6 @@
 import { Component } from '@angular/core';
-
 import { CovidTrackService } from '../app/covid-track.service';
 import { } from '@angular/common';
-
-
-
 
 @Component({
   selector: 'app-root',
@@ -12,7 +8,6 @@ import { } from '@angular/common';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-
   totalconfirmed: number;
   totaldeceased: number;
   totalrecovered: number;
@@ -28,15 +23,10 @@ export class AppComponent {
   mydate = new Date();
   stateut: any;
 
-
-
   constructor(private corona: CovidTrackService) { }
 
   ngOnInit() {
     this.corona.getTotalData().subscribe((data) => {
-      /* console.warn(data); */
-
-
       this.totalconfirmed = data.TT.total.confirmed;
       this.totaldeceased = data.TT.total.deceased;
       this.totalrecovered = data.TT.total.recovered;
@@ -45,7 +35,6 @@ export class AppComponent {
       this.dailyrecovered = data.TT.delta.recovered;
       this.active = this.totalconfirmed - this.totalrecovered;
       this.dated = data.TT.meta.last_updated;
-
       /* vaccination details */
       this.firstDoseVacci = data.TT.total.vaccinated1;
       this.secondDoseVacci = data.TT.total.vaccinated2;
@@ -53,10 +42,5 @@ export class AppComponent {
     })
 
     this.corona.getStatewiseData().subscribe((data) => this.stateut = data.statewise);
-
-    
-
   }
-
-  
 }
