@@ -11,35 +11,12 @@ import * as Chart from 'chart.js';
 })
 export class CovidChartComponent implements OnInit {
 
-
   dates: any;
   dailyconfirmed: any;
   deaths:any;
   chart = [];
   chart2 = [];
-  /* 
-    lineChartData: ChartDataSets[] = [
-      { data: [85, 72, 78, 75, 77, 75], label: 'Crude oil prices' },
-    ];
   
-    lineChartLabels: Label[] = ['January', 'February', 'March', 'April', 'May', 'June'];
-  
-    lineChartOptions = {
-      responsive: true,
-    };
-  
-    lineChartColors: Color[] = [
-      {
-        borderColor: 'black',
-        backgroundColor: '#fffff',
-      },
-    ];
-  
-    lineChartLegend = true;
-    lineChartPlugins = [];
-    lineChartType = 'line'; */
-
-
   constructor(private covidService: CovidTrackService) { }
 
   ngOnInit(): void {
