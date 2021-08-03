@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-
 import { CovidTrackService } from '../covid-track.service';
 import { Color, Label } from 'ng2-charts';
 import { ChartDataSets, ChartOptions } from 'chart.js';
@@ -10,7 +9,6 @@ import * as Chart from 'chart.js';
   styleUrls: ['./covid-chart.component.css']
 })
 export class CovidChartComponent implements OnInit {
-
   dates: any;
   dailyconfirmed: any;
   deaths:any;
@@ -31,7 +29,6 @@ export class CovidChartComponent implements OnInit {
           type: 'line',
           data: {
             labels: this.dates,
-            
             datasets: [
               {
                 label:"Active Cases",
@@ -70,13 +67,11 @@ export class CovidChartComponent implements OnInit {
           }
         }));
 
-
         /* deaths line graph */
         this.chart2.push(new Chart('death_canvas', {
           type: 'line',
           data: {
             labels: this.dates,
-            
             datasets: [
               {
                 label:"Deaths",
@@ -116,10 +111,7 @@ export class CovidChartComponent implements OnInit {
           }
         }));
       })
-
   }
-
-
 }
 
 
