@@ -12,7 +12,7 @@ export class CovidTrackService {
 
   getTotalData():Observable<any>{
    
-    const url = "https://api.covid19india.org/v4/min/data.min.json";
+    const url = "https://data.covid19india.org/v4/min/data.min.json";
     return this.http.get<any>(url);
   }
 
